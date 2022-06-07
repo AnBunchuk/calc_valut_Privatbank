@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bunchuk_HW24_2</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <h3>Конвертер валют</h3>
+        </header>
+        <form>
+
+            <div class="form_header">
+                <select class="nal_beznal">
+                    <option value="1">нал</option>
+                    <option value="1.3">безнал</option>
+                </select>
+                <!-- <div type="date" class="data"> -->
+                <p class="data">22.09.2022</p>
+                <!-- </div> -->
+            </div>
+            <!-- /////////////////// -->
+            <div class="body_calc">
+
+                <lable class="lable1" for="money1">МЕНЯЮ</lable>
+                <br>
+                <input id="money1" type="number" class="money1">
+
+                <select class="currency_change1">
+                    <option value="1">USD</option>
+                    <option value="1.1">EUR</option>
+                    <option value="40">UAN</option>
+
+                </select>
+                <input class="calc"></input>
+                <div class="change"></div>
+
+                <lable class="lable2" for="money2">ПОЛУЧАЮ</lable>
+                <br>
+                <input id="money2" type="number" class="money2">
+
+                <select class="currency_change2">
+                    <option value="1">USD</option>
+                    <option value="1.1">EUR</option>
+                    <option value="40">UAN</option>
+
+                </select>
+
+            </div>
+            <!-- //////////////////// -->
+        </form>
+    </main>
+    <script src="./script.js"></script>
+</body>
+
+
+</html>

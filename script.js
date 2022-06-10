@@ -12,15 +12,14 @@ class Calc {
         this.currency_change1 = this.wrapper.querySelector('.currency_change1');
         this.currency_change2 = this.wrapper.querySelector('.currency_change2');
         this.cashValue = '1'; // нал-безнал
-        this.currency1 = '1';// верхняя валюта currency_change1
-        this.currency2 = '40';// нижняя валюта currency_change2
+        this.currency1 = '1';// верхняя валюта "МЕНЯЮ" currency_change1
+        this.currency2 = '40';// нижняя валюта "ПОЛУЧАЮ" currency_change2
         this.dataServer = [];
     }
     // текущее число
     currentDate() {
         let todey = new Date();
         let myMonth = todey.getMonth();
-        // console.log(todey.getMonth());
         if (myMonth < 10) myMonth = '0' + ++myMonth;
         let myDate = todey.getDate() + '.' + myMonth + '.' + todey.getFullYear();
         this.date.innerText = myDate;
@@ -31,7 +30,6 @@ class Calc {
             let cash = e.target.selectedIndex;
             if (cash === 0) this.cashValue = '1';
             if (cash === 1) this.cashValue = '1.3';
-            // console.log(this.cashValue)
         }
     }
     // поле меняю
@@ -41,25 +39,20 @@ class Calc {
             if (currency === 0) this.currency1 = this.dataServer[0].buy //usd '29.25490'
             if (currency === 1) this.currency1 = this.dataServer[1].buy; //eur '31.19010'
             if (currency === 2) this.currency1 = 1;
-            // console.dir(this.currency1)
         }
     }
     // поле получаю
     currencyChange2() {
         this.currency_change2.oninput = (e) => {
             let currency = e.target.selectedIndex;
-            // if (currency === 0) this.currency2 = '29.25490'; 
             if (currency === 0) this.currency2 = 1 / this.dataServer[0].sale; //usd '32.78689'
-            // if (currency === 1) this.currency2 = '31.19010'; 
             if (currency === 1) this.currency2 = 1 / this.dataServer[1].sale; //eur '35.08772'
             if (currency === 2) this.currency2 = 1;
-            // console.dir(this.currency2)
         }
     }
 
     dataInput() {
         this.wrapper.addEventListener('click', (e) => {
-            // console.dir(e.target)
             // нажатие кнопки "=" 
             if (e.target.value === "=")
                 this.calculation()
@@ -71,11 +64,8 @@ class Calc {
     }
 
     dataPrivat() {
-        // let dataServer = [];
-
         // создаем обьект для получаем данных с сервера
         const request = new XMLHttpRequest();
-
         // запрос на сервер откуда будем получать и в каком виде запрос
         request.open("GET", "https://api.privatbank.ua/p24api/pubinfo?exchange&json&coursid=11")
         // настройка заголока нашего соединения, т.е. в каком формате мы хотим получить данные
@@ -93,9 +83,9 @@ class Calc {
                 // преобразуем к формату JSON
                 this.dataServer = JSON.parse(this.dataServer)
                 console.log(this.dataServer);
-// подставляем данные
+                
+                // подставляем данные
 this.currency1=this.dataServer[0].buy
-// this.currency_change2[0].selected=false
 this.currency_change2[2].selected=true
 this.currency2 = 1
 

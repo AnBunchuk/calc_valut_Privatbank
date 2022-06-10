@@ -16,51 +16,40 @@
             <h3>Конвертер валют</h3>
         </header>
         <form>
-
             <div class="form_header">
                 <select class="nal_beznal">
                     <option value="1">Hал.</option>
                     <option value="1.3">Безнал</option>
                 </select>
-                <!-- <div type="date" class="data"> -->
                 <p class="date">22.09.2022</p>
-                <!-- </div> -->
             </div>
-            <!-- /////////////////// -->
             <div class="body_calc">
-
                 <lable class="lable1" for="money1">МЕНЯЮ</lable>
                 <br>
                 <input id="money1" type="number" class="money1" min="1" step="1">
-
                 <select class="currency_change1">
                     <option value="1">USD</option>
                     <option value="1.1">EUR</option>
                     <option value="40">UAH</option>
-
                 </select>
                 <input class="calc" value="="></input>
                 <div class="change">
                     <img class="img2" src="./img/change2.png">
                 </div>
-
                 <lable class="lable2" for="money2">ПОЛУЧАЮ</lable>
                 <br>
                 <input id="money2" type="number" class="money2">
-
                 <select class="currency_change2">
                     <option value="1">USD</option>
                     <option value="1.1">EUR</option>
                     <option value="40">UAH</option>
-
                 </select>
-
             </div>
-            <!-- //////////////////// -->
         </form>
     </main>
+
     <script src="./script.js"></script>
-    
+
     <script>
         const myCalc = new Calc()
         myCalc.init()

@@ -57,9 +57,6 @@ form {
     display: grid;
     grid-template-columns: 1fr 120px 1fr;
     background-color: #dadada;
-
-    /* background: repeating-radial-gradient(closest-corner, white 20%,
-            dimgray 20%, white 20%, dimgray 40%, white 40%, dimgray 60% white 40%, dimgray 80%, white 20%, dimgray 10%x); */
 }
 
 p,
@@ -70,7 +67,6 @@ select.nal_beznal {
     margin: 10px;
     height: 30px;
     opacity: 80%;
-
 }
 
 .date {
@@ -110,11 +106,14 @@ select.nal_beznal {
     /* вариант1 */
     /* grid-column: 1/ 4;
     grid-row: 2/ 3; */
+
     /* вариант2 */
     /* grid-column: [col] 1/[col] 4;
     grid-row: [row] 2/ [row] 3; */
+
     /* вариант3 */
     grid-area: 2 / 1 / 3 / 4;
+
     /* вариант4 */
     /* grid-column-start: 1;
     grid-column-end: 4;
@@ -174,7 +173,6 @@ select.nal_beznal {
     border: #72ac72 solid 1px;
 }
 
-
 select.nal_beznal,
 .currency_change1,
 .currency_change2,
@@ -188,8 +186,6 @@ select.nal_beznal,
     -webkit-box-shadow: 0px 0px 7px 2px rgba(36, 44, 51, 0.4);
     -moz-box-shadow: 0px 0px 7px 2px rgba(36, 44, 51, 0.4);
     box-shadow: 0px 0px 7px 2px rgba(36, 44, 51, 0.4);
-
-
 }
 
 .currency_change1,
@@ -218,5 +214,4 @@ select.nal_beznal,
 .currency_change2 {
     font-size: 16px;
     color: dimgray;
-    /* font-weight: bold; */
 }
